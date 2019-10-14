@@ -1,0 +1,7 @@
+from builtins import int, input, str
+import math
+
+radius = int(input('请输入圆的半径：'))
+print (radius)
+area = math.pi * radius ** 2
+print ('半径为' + str(radius) + '的圆面积约为'+str(area))
