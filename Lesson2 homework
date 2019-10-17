@@ -1,0 +1,26 @@
+# 第二课作业1.实现一周的记账功能
+# 一周的收入income
+income = list()
+# 一周的支出expense
+expense = list()
+# 每天的结余save
+save = dict()
+# 最终的结余k
+k = 0
+i = 1
+days = ('周一', '周二', '周三', '周四', '周五', '周六', '周日')
+
+while i <= 7:
+    print(days[i-1])
+    k1 = int(input('今天的收入：'))
+    k2 = int(input('今天的支出：'))
+    income.append(k1)
+    expense.append(k2)
+    save[days[i-1]] = k1 - k2
+    k += save[days[i-1]]
+    i += 1
+
+print('7天的收入：', income)
+print('7天的支出：', expense)
+print('每天的结余', save)
+print('最终的结余：', k)
