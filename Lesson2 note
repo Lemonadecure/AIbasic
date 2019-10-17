@@ -35,5 +35,10 @@ print(list_3)不会打印出重复添加的元素
 artic1 | artic2 并集，将两个集合合在一起
 & 交集
 - 补集
-(not) in 判断布尔 true false
+(not) in 判断布尔 true false 可以操作于四种集
 
+用字典dict来实现list，通过键值对key:value，list是一个简化版的字典
+查看字典里有哪些key，用print(dict1.keys())
+key不可重复，重复会后面覆盖前面；value可以重复，类似ID和名字的关系
+dict1 = dict() 建一个空字典
+dict1[key] = value 给字典添加值/修改值
