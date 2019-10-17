@@ -1,0 +1,44 @@
+if条件
+if 条件:
+    空四格一些代码
+elif 条件:
+    空四格一些代码
+else:
+    空四格一些代码
+    
+for循环--定长循环
+for 变量 in 列表：#叫号
+    空四格 pass  #当前就诊的人
+
+遍历下标
+for index in [0,1,2,3]:
+    print(index)
+    print(list1[index],'yes!']
+print('end')
+
+for i in range(4):这个函数常用于操作下标
+    print(i)
+    通过下标来操作一些元素
+    
+或者遍历元素
+for i in list1:
+    print(i,'yes!']
+print('end')
+
++ 拼接字符串 , 拼接不同类型元素
+
+while循环--不定长度的循环，满足一定条件
+while 条件：
+    pass #一般在这里进行某些操作，然后修改条件
+    
+num = 0
+i = 1
+while num != 4:
+    i += 1
+    if i % 2 == 0:
+        num += 1 修改条件，如果不修改就变成死循环
+print(i)
+
+while text: 不为空判断，Python的简写语法意为while text is None:
+    print('输入为：',text)
+    text = input()
