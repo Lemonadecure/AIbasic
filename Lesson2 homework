@@ -30,3 +30,67 @@ print('7天的收入：', income)
 print('7天的支出：', expense)
 print('每天的结余', save)
 print('最终的结余：', k)
+
+# 第二课作业2.实现ATM机功能（暂时没想到办法在输入错误的情况下一直循环输入）
+# 显示菜单menu
+menu = '''===============
+请选择操作
+1.查询余额
+2.存款
+3.取款
+4.退出
+==============='''
+print(menu)
+# 报错文案
+error = '输入有误，请重新输入。'
+# 账户初始余额
+amount = 0
+# 输入操作代码
+i = int(input())
+while i not in [1, 2, 3, 4]:
+    print(error)
+    print(menu)
+    ik = int(input())
+    i = ik
+while i in [1, 2, 3]:
+    # 输入操作1.查询余额
+    if i == 1:
+        print('余额', amount)
+    # 输入操作2.存款
+    elif i == 2:
+        # 填写存入金额
+        save = float(input('存入：'))
+        # 填写金额为正数时，操作成功
+        if save >= 0:
+            amount += save
+            print('操作成功！')
+        # 填入金额为负数时，报错
+        else:
+            print(error)
+    # 输入操作3.存款
+    elif i == 3:
+        draw = float(input('取出：'))
+        # 填写金额为正数时，操作成功
+        if draw >= 0:
+            # 取出金额不大于余额时，操作成功，否则报错
+            if draw <= amount:
+                amount -= draw
+                print('操作成功！')
+            else:
+                print(error)
+        # 填入金额为负数时，报错
+        else:
+            print(error)
+    # 兜底，保证代码可读性
+    else:
+        print(error)
+    # 所有以上操作结束都再次进入菜单页面
+    print(menu)
+    ik = int(input())
+    i = ik
+# 输入操作4.退出
+if i == 4:
+    print('谢谢！再见！')
+# 输入其他内容
+else:
+    print(error)
