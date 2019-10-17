@@ -5,19 +5,25 @@ income = list()
 expense = list()
 # 每天的结余save
 save = dict()
-# 最终的结余k
+# 最终的结余k，初始值为0
 k = 0
-i = 1
+# 一周的每天days
 days = ('周一', '周二', '周三', '周四', '周五', '周六', '周日')
-
-while i <= 7:
-    print(days[i-1])
-    k1 = int(input('今天的收入：'))
-    k2 = int(input('今天的支出：'))
+# 取元组的下标并同步循环七次
+i = 0
+while i < 7:
+    # 今天是周几？输入今天的收入和支出
+    print(days[i])
+    k1 = int(input('收入：'))
+    k2 = int(input('支出：'))
+    # 将收入和支出分别放入list中
     income.append(k1)
     expense.append(k2)
-    save[days[i-1]] = k1 - k2
-    k += save[days[i-1]]
+    # 将今天的结余放入dict中
+    save[days[i]] = k1 - k2
+    # 将今天的结余累计入变量k
+    k += save[days[i]]
+    # 修改条件
     i += 1
 
 print('7天的收入：', income)
