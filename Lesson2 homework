@@ -122,3 +122,18 @@ for i in vocab:
     id2word[k] = i
     k += 1
 print('id2word =', id2word)
+
+# 第二课作业4.闰年算法
+# 可以被4整除，被100整除的时候可以被400整除
+year = input('请输入年份')
+while year == '':
+    print('输入有误，请重新输入')
+    year = input('请输入年份')
+if int(year) % 400 == 0:
+    print(year, '年是闰年')
+elif int(year) % 100 == 0:
+    print(year, '年不是闰年')
+elif int(year) % 4 == 0:
+    print(year, '年是闰年')
+else:
+    print(year, '年不是闰年')
