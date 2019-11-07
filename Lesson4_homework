@@ -1,0 +1,17 @@
+# 1
+import numpy as np
+
+obj = [5]
+np.array(obj)
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 定义 x 变量的范围 (-3，3) 数量 50 
+x=np.linspace(-3,3,50)
+y=x**3
+
+plt.plot(x, y)
+plt.show()
+
+import sklearn
