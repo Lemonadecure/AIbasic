@@ -1,5 +1,59 @@
 # 1. 完成ATM的类实现, 将第二次课程的ATM机器改写成类实现
+class ATM:
+    def __init__(self, i):
+        self.i = i
 
+    def action(self, i):
+        menu = '''===============
+        请选择操作
+        1.查询余额
+        2.存款
+        3.取款
+        4.退出
+        ==============='''
+        print(menu)
+        error = '输入有误，请重新输入。'
+        amount = 0
+        self.i = input()
+        while i != '4':
+            if i == '1':
+                print('余额', amount)
+            elif i == '2':
+                save = input('存入：')
+                if save == '':
+                    print(error)
+                elif int(save) >= 0:
+                    amount += int(save)
+                    print('操作成功！存入：', save, '余额：', amount)
+                else:
+                    print(error)
+            elif i == '3':
+                draw = input('取出：')
+                # 填写金额为正数时，操作成功
+                if draw == '':
+                    print(error)
+                elif int(draw) >= 0:
+                    # 取出金额不大于余额时，操作成功，否则报错
+                    if int(draw) <= amount:
+                        amount -= int(draw)
+                        print('操作成功！取出：', draw, '余额：', amount)
+                    else:
+                        print('余额不足')
+                # 填入其他时，报错
+                else:
+                    print(error)
+            # 填入其他非4的字符
+            else:
+                print(error)
+            # 所有以上操作结束都再次进入菜单页面
+            print(menu)
+            i = input()
+        # 输入操作4.退出
+        print('谢谢！再见！')
+
+
+ATM.action()
+### 报错了不知道错在哪，还是不太理解实例化。
 
 # 2. 练习会先提供一个李靖类，用以记录人物角色的战斗力。需要你创建一个子类哪吒类，提供属性和参数的修改。
 # 要求： 在哪吒的初始化方法中，默认添加`['混天绫', '乾坤圈']` 两个装备,以及初始化战斗力为50.
