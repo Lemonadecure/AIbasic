@@ -1,0 +1,50 @@
+# 1. 完成ATM的类实现, 将第二次课程的ATM机器改写成类实现
+
+
+# 2. 练习会先提供一个李靖类，用以记录人物角色的战斗力。需要你创建一个子类哪吒类，提供属性和参数的修改。
+# 要求： 在哪吒的初始化方法中，默认添加`['混天绫', '乾坤圈']` 两个装备,以及初始化战斗力为50.
+# []
+# ['混天绫', '乾坤圈']
+# ['七宝玲珑塔']
+# 60
+# ['混天绫', '乾坤圈', '火尖枪']
+# 90
+
+
+class Lijing:  # 李靖
+    # 初始化函数，为每个实例创建4个参数（其中后3个参数有默认值）
+    def __init__(self, name, weapons=[], power=10):
+        self.name = name
+        self.weapons = weapons
+        self.power = power
+
+    def count_fight(self, weapon, weapon_power):
+        self.weapons.append(weapon)
+        self.power += weapon_power  # 总战力=武器战力之和
+
+
+# your code here
+# 请你完成子类的定制（包括初始化方法和count_fight函数）
+class Nezha(Lijing):  # 哪吒
+    def __init__(self, name, weapons=['混天绫', '乾坤圈'], power=50):
+        # super(Nezha, self).__init__(name, weapons=weapons, power=power)
+        Lijing.__init__(self, name, weapons, power)
+
+    def count_fight(self, weapon, weapon_power):
+        # super().count_fight(weapon, weapon_power)
+        Lijing.count_fight(self, weapon, weapon_power)
+
+
+lijing = Lijing('李靖')
+print(lijing.weapons)
+
+nezha = Nezha('哪吒')
+print(nezha.weapons)
+
+lijing.count_fight('七宝玲珑塔', 50)  # 七宝玲珑塔 战力 50
+print(lijing.weapons)
+print(lijing.power)
+
+nezha.count_fight('火尖枪', 40)  # 火尖枪 战力 40
+print(nezha.weapons)
+print(nezha.power)
